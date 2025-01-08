@@ -3,6 +3,10 @@ const textBox = document.getElementById('text-box');
 const keyboard = document.getElementById('keyboard');
 const closeButton = document.querySelector('.key.close');
 const backspaceButton = document.querySelector('.key.backspace');
+const shiftButton = document.querySelector('.key.shift');
+
+// Variable to track whether shift is active or not
+let isShiftActive = false;
 
 // Function to show the keyboard when the input field is clicked
 textBox.addEventListener('focus', () => {
@@ -27,8 +31,26 @@ keys.forEach(key => {
             textBox.value += ' '; // Add space when space key is clicked
         } else if (keyText === 'Backspace') {
             textBox.value = textBox.value.slice(0, -1); // Remove last character
+        } else if (keyText === 'Shift') {
+            // Toggle shift state when Shift is clicked
+            isShiftActive = !isShiftActive;
+
+            // Change the appearance of the Shift button (active/inactive state)
+            shiftButton.classList.toggle('active', isShiftActive);
+
+            // Update the letter case of the keys based on shift state
+            keys.forEach(k => {
+                if (k.innerText.match(/[a-zA-Z]/)) {
+                    k.innerText = isShiftActive ? k.innerText.toUpperCase() : k.innerText.toLowerCase();
+                }
+            });
         } else {
-            textBox.value += keyText; // Add clicked key text to input
+            // Handle letter or character key input
+            if (isShiftActive) {
+                textBox.value += keyText.toUpperCase(); // Add uppercase letter
+            } else {
+                textBox.value += keyText.toLowerCase(); // Add lowercase letter
+            }
         }
     });
 });
