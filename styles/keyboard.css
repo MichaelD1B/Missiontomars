@@ -1,82 +1,100 @@
-/* Reset some default styles */
-html, body {
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    height: 100%;
-    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
 }
 
-/* Center everything on the page */
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-}
-
-/* Input field */
+/* Text Box */
 #text-box {
-    width: 300px;
-    padding: 15px;
-    font-size: 16px;
-    border-radius: 5px;
+    width: 90%;
+    margin: 20px auto;
+    display: block;
+    padding: 10px;
+    font-size: 18px;
     border: 1px solid #ccc;
-    box-sizing: border-box;
-    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Virtual keyboard styling */
-.keyboard {
-    display: none;
+/* Keyboard Container */
+#keyboard {
+    display: none; /* Hidden by default */
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #fff;
-    border-top: 1px solid #ddd;
+    background: #ffffff;
     padding: 10px;
-    box-sizing: border-box;
-    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid #ddd;
+    z-index: 1000;
 }
 
-/* Key styling */
+/* Key Rows */
+.key-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+/* Keys */
 .key {
-    padding: 15px;
+    flex: 1;
+    max-width: 50px;
+    margin: 2px;
+    padding: 10px 5px;
     font-size: 18px;
-    border: none;
-    background-color: #ddd;
-    margin: 5px;
-    cursor: pointer;
+    text-align: center;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    transition: background-color 0.2s;
+    background: #f9f9f9;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s, transform 0.1s;
 }
 
 .key:hover {
-    background-color: #ccc;
-}
-
-/* Spacebar key should span multiple columns */
-.key.space {
-    width: 300px;
-}
-
-/* Close button should take full width */
-.key.close {
-    background-color: #ff4c4c;
+    background: #007bff;
     color: white;
-    width: 100%;
 }
 
-.key.close:hover {
-    background-color: #e13e3e;
+.key:active {
+    transform: scale(0.95);
 }
 
-/* Backspace button with a different style */
+/* Space Key */
+.key.space {
+    flex: 3; /* Make the spacebar wider */
+    max-width: none;
+}
+
+/* Backspace Key */
 .key.backspace {
-    background-color: #ffcc00;
+    background: #ffc107;
 }
 
-.key.backspace:hover {
-    background-color: #e6b800;
+/* Shift Key */
+.key.shift.active {
+    background: #007bff;
+    color: white;
+}
+
+/* Close Key */
+.key.close {
+    background: #dc3545;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .key {
+        font-size: 16px;
+        padding: 8px 5px;
+    }
+
+    #text-box {
+        font-size: 16px;
+    }
 }
