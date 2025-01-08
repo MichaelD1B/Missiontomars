@@ -1,0 +1,100 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+/* Text Box */
+#text-box {
+    width: 90%;
+    margin: 20px auto;
+    display: block;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Keyboard Container */
+#keyboard {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    padding: 10px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid #ddd;
+    z-index: 1000;
+}
+
+/* Key Rows */
+.key-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+/* Keys */
+.key {
+    flex: 1;
+    max-width: 50px;
+    margin: 2px;
+    padding: 10px 5px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.key:hover {
+    background: #007bff;
+    color: white;
+}
+
+.key:active {
+    transform: scale(0.95);
+}
+
+/* Space Key */
+.key.space {
+    flex: 3; /* Make the spacebar wider */
+    max-width: none;
+}
+
+/* Backspace Key */
+.key.backspace {
+    background: #ffc107;
+}
+
+/* Shift Key */
+.key.shift.active {
+    background: #007bff;
+    color: white;
+}
+
+/* Close Key */
+.key.close {
+    background: #dc3545;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .key {
+        font-size: 16px;
+        padding: 8px 5px;
+    }
+
+    #text-box {
+        font-size: 16px;
+    }
+}
