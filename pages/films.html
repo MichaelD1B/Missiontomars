@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Films</title>
   <style>
-   body {
+    body {
       margin: 0;
       padding: 0;
       width: 100vw;
@@ -88,6 +88,43 @@
     .nav a:hover {
       color: #CA41E2;
     }
+
+    .video-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.3s;
+    }
+
+    .video-overlay.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .video-overlay video {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+    }
   </style>
 </head>
 <body>
@@ -101,7 +138,7 @@
     </div>
 
     <div class="grid">
-      <img src="https://m.media-amazon.com/images/M/MV5BMTQ2NzUxMTAxN15BMl5BanBnXkFtZTcwMzEyMTIwMg@@._V1_.jpg" alt="Twilight">
+      <img src="https://m.media-amazon.com/images/M/MV5BMTQ2NzUxMTAxN15BMl5BanBnXkFtZTcwMzEyMTIwMg@@._V1_.jpg" alt="Twilight" id="twilight">
       <img src="https://m.media-amazon.com/images/M/MV5BN2FkMTRkNTUtYTI0NC00ZjI4LWI5MzUtMDFmOGY0NmU2OGY1XkEyXkFqcGc@._V1_.jpg" alt="Shrek">
       <img src="https://m.media-amazon.com/images/M/MV5BMzUzNDM2NzM2MV5BMl5BanBnXkFtZTgwNTM3NTg4OTE@._V1_.jpg" alt="La la land">
       <img src="https://m.media-amazon.com/images/M/MV5BMTQzNzg0NDI2MF5BMl5BanBnXkFtZTgwMzgxNzY2MTE@._V1_FMjpg_UX1000_.jpg" alt="As above so below">
@@ -112,6 +149,32 @@
       <img src="https://m.media-amazon.com/images/M/MV5BNDZiNDRlNGQtNGQ4Ny00NDRiLTkwOWItZDJlZTQ4YTlmM2M3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="My Little Pony">
       <img src="https://m.media-amazon.com/images/M/MV5BYjI3NDU0ZGYtYjA2YS00Y2RlLTgwZDAtYTE2YTM5ZjE1M2JlXkEyXkFqcGc@._V1_.jpg" alt="Barbie">
     </div>
+
+    <div class="video-overlay" id="videoOverlay">
+      <button class="close-btn" id="closeBtn">&times;</button>
+      <video id="videoPlayer" controls>
+        <source src="../images/twilight.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
   </div>
+
+  <script>
+    const twilightImage = document.getElementById('twilight');
+    const videoOverlay = document.getElementById('videoOverlay');
+    const videoPlayer = document.getElementById('videoPlayer');
+    const closeBtn = document.getElementById('closeBtn');
+
+    twilightImage.addEventListener('click', () => {
+      videoOverlay.classList.add('active');
+      videoPlayer.play();
+    });
+
+    closeBtn.addEventListener('click', () => {
+      videoOverlay.classList.remove('active');
+      videoPlayer.pause();
+      videoPlayer.currentTime = 0;
+    });
+  </script>
 </body>
 </html>
