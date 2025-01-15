@@ -1,6 +1,173 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+<<<<<<< HEAD
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entertainment Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: auto;
+      background-color: #23282B;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      position: relative;
+      background-color: #000;
+      box-shadow: inset 0 0 50px 25px rgba(128, 0, 128, 0.5);
+    }
+
+    .faded-border {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      box-shadow: 0 0 30px 15px #FFFFFF;
+    }
+
+    .nav {
+      position: absolute;
+      top: 20px;
+      right: 50px;
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .nav {
+      font-size: 80px;
+      color: #fff;
+      text-align: center;
+      -webkit-animation: glow 1s ease-in-out infinite alternate;
+      -moz-animation: glow 1s ease-in-out infinite alternate;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @-webkit-keyframes glow {
+      from {
+        text-shadow: 0 0 10px #CA41E2, 0 0 20px #CA41E2, 0 0 30px #9D33B0, 0 0 40px #9D33B0, 0 0 50px #9D33B0, 0 0 60px #9D33B0
+      }
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      padding: 100px 50px;
+    }
+
+    .grid img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .grid img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .nav a:hover {
+      color: #CA41E2;
+    }
+
+    .details-buttons, .entertainment-buttons {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .details-buttons a, .entertainment-buttons a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 0;
+      text-align: left;
+      transition: color 0.3s;
+    }
+
+    .details-buttons a:hover, .entertainment-buttons a:hover {
+      color: #CA41E2;
+    }
+
+    .nav-details, .nav-entertainment {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  </style>
+  <script>
+    function toggleSection(section) {
+      const sectionButtons = document.querySelector(`.${section}-buttons`);
+      const allSections = ['details', 'entertainment'];
+
+      // Hide all sections
+      allSections.forEach(sec => {
+        if (sec !== section) {
+          document.querySelector(`.${sec}-buttons`).style.display = 'none';
+        }
+      });
+
+      // Toggle the current section
+      sectionButtons.style.display = sectionButtons.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="faded-border"></div>
+
+    <div class="nav">
+      <a href="index.html">HOME</a>
+
+      <div class="nav-details">
+        <a href="#" onclick="toggleSection('details'); return false;">DETAILS</a>
+        <div class="details-buttons">
+          <a href="pages/vlucht.html" target="_blank">Informatie over de vlucht</a>
+          <a href="https://example.com/ship-details" target="_blank">Details over het ruimteschip</a>
+          <a href="https://example.com/restaurant-menus" target="_blank">Menu's van het onboard-restaurant</a>
+          <a href="https://example.com/ship-parts" target="_blank">Ruimteschiponderdelen</a>
+          <a href="https://example.com/wellness" target="_blank">Wellness/Fitnessruimte</a>
+          <a href="https://example.com/vr-room" target="_blank">VR-Ruimte</a>
+        </div>
+      </div>
+
+      <div class="nav-entertainment">
+        <a href="#" onclick="toggleSection('entertainment'); return false;">ENTERTAINMENT</a>
+        <div class="entertainment-buttons">
+          <a href="pages/bibliotheek.html" target="_blank">Overzicht van de Bibliotheek</a>
+          <a href="pages/muziek.html" target="_blank">Luisteren naar Muziek</a>
+          <a href="pages/films.html" target="_blank">Toegang tot Films en Series</a>
+          <a href="https://example.com/mini-games" target="_blank">Mini-Games</a>
+          <a href="https://example.com/webcam-feeds" target="_blank">Webcamfeeds</a>
+        </div>
+      </div>
+
+    
+    </div>
+  </div>
+=======
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruimteschip Index</title>
@@ -8,20 +175,19 @@
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
-
     <div class="background"></div>
 
     <div class="page-container">
         <div class="navbar">
-            <a href="#home">Home</a>
+            <a href="/index.html">Home</a>
             
             <!-- Dropdown voor Details -->
             <div class="dropdown">
                 <a href="javascript:void(0)">Details</a>
                 <div class="dropdown-content">
-                    <a href="#">Technische Specificaties</a>
-                    <a href="#">Missies</a>
-                    <a href="#">Crew</a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
                 </div>
             </div>
 
@@ -29,9 +195,10 @@
             <div class="dropdown">
                 <a href="javascript:void(0)">Entertainment</a>
                 <div class="dropdown-content">
-                    <a href="#">Films</a>
-                    <a href="#">Spellen</a>
-                    <a href="#">Virtuele Tour</a>
+                    <a href="/pages/bibliotheek.html">Bibliotheek</a>
+                    <a href="/pages/menu.html">Menu</a>
+                    <a href="#"></a>
+                    <a href="/pages/"></a>
                 </div>
             </div>
         </div>
@@ -43,13 +210,7 @@
     </div>
 
 
-    <a href="/pages/entertainment.html"><li class="illustrate">entertainment</li></a>
-     <a href="/pages/films.html"><li class="illustrate">films</li></a>
-        <a href="/pages/muziek.html"><li class="illustrate">music</li></a>
-            <a href="/pages/vlucht.html"><li class="illustrate">vlucht</li></a>
-
-
-
 <script src="/scripts/index.js"></script>
+>>>>>>> b8718a510561580fb4ff9e5eedbbcbdd707481b4
 </body>
 </html>
