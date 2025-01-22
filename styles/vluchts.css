@@ -6,8 +6,9 @@ body {
   background-color: #23282B;
   font-family: Arial, sans-serif;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; 
+  align-items: center;     
+  overflow:hidden
 }
 
 .container {
@@ -15,8 +16,9 @@ body {
   height: 100%;
   box-sizing: border-box;
   position: relative;
-  background-color: #000;
+  background-image: url('../images/vluchts.png');
   box-shadow: inset 0 0 50px 25px rgba(128, 0, 128, 0.5);
+  
 }
 
 .faded-border {
@@ -89,4 +91,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+.info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent; /* Optional, for better visibility */
+  color: white;
+  text-align: center; /* Optional, center the text */
+  padding: 20px; /* Optional, for spacing */
+  margin-bottom: 90px; /* Remove margin-bottom */
+  margin-left: 20px;
+  font-size: 40px;
 }
