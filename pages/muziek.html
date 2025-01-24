@@ -11,8 +11,30 @@
     <div class="faded-border"></div>
 
     <div class="nav">
-        <a href="/index.html">HOME</a>
-   
+      <a href="/index.html">HOME</a>
+      <div class="grid">
+        <img src="/images/chromokopia.jpeg" draggable="false" id="Tyler">
+        <img src="/images/Graduation_(album).jpg" draggable="false" id="Kanye">
+        <img src="/images/tobyfox.png" draggable="false" id="tobyfox">
+        <img src="/images/linkin.png" draggable="false" id="LinkinPark">
+        <img src="/images/greenday.png" draggable="false" id="GreenDay">
+        <img src="/images/queen.png" draggable="false" id="Queen">
+        <img src="/images/abba.png" draggable="false" id="Abba">
+        <img src="/images/mechele obama.png" draggable="false" id="MichaelJackson">
+        <img src="/images/weezer.png" draggable="false" id="Weezer">
+        <img src="/images/persona5.png" draggable="false" id="Persona5">
+      </div>
+    
+      <!-- Video overlay -->
+      <div class="video-overlay" id="videoOverlay">
+        <button class="close-btn" id="closeBtn">&times;</button>
+        <video id="videoPlayer" controls>
+          <source id="videoSource" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    
         <div class="nav-details">
             <a href="#" onclick="toggleSection('details'); return false;">DETAILS</a>
             <div class="details-buttons">
@@ -37,6 +59,6 @@
       </div>
     </div>
     <script src="/scripts/muziek.js"> </script>
-    <script src="/scripts/nav.js"></script>
+    <script src="/scripts/nav.js"> </script>
 </body>
 </html>
