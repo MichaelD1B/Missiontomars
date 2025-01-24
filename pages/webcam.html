@@ -10,15 +10,22 @@
     <div class="container">
         <div class="faded-border"></div>
         <div class="camera-feed-container">
+          <!-- Camera Controls -->
           <div class="camera-controls">
               <button id="camera1">Camera 1</button>
               <button id="camera2">Camera 2</button>
               <button id="camera3">Camera 3</button>
-              <!-- Add more buttons for each camera -->
+              <!-- Add more buttons if needed -->
           </div>
+  
+          <!-- Camera Display Section -->
           <div class="camera-display">
-              <img id="cameraDisplay" src="camera1.jpg" alt="Camera Feed" />
+              <video id="cameraVideo" width="640" height="480" autoplay muted>
+                  <source id="cameraSource" src="/videos/camera1.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
           </div>
+      </div>
         
     <div class="nav">
         <a href="/index.html">HOME</a>
