@@ -8,6 +8,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   
 }
 
@@ -155,8 +156,8 @@ button:hover {
 }
 
 video {
-  width: 500px;
-  height: 850px;
+  width: 852px;
+  height: 480px;
   object-fit: cover;
   border: none;
 }
