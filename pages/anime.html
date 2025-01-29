@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muziek</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/anime.css">
+</head>
+<body>
+  <div class="container">
+    <div class="faded-border"></div>
+
+    <div class="nav">
+      <div class="grid">
+        <img src="/images/midlock.png" draggable="false" id="bluelock">
+        <img src="/images/fireforce.png" draggable="false" id="fireforce">
+        <img src="/images/peak.png" draggable="false" id="dragonball">
+        <img src="/images/jojo.png" draggable="false" id="jojo">
+        <img src="/images/peakpiece.png" draggable="false" id="onepiece">
+        <img src="/images/naruto.png" draggable="false" id="naruto">
+        <img src="/images/opm.png" draggable="false" id="opm">
+        <img src="/images/solo leveling.png" draggable="false" id="SL">
+        <img src="/images/jujutsu kaisen.png" draggable="false" id="jjk">
+        <img src="/images/bleach.png" draggable="false" id="bleach>
+      </div>
+    
+      <!-- Video overlay -->
+      <div class="video-overlay" id="videoOverlay">
+        <button class="close-btn" id="closeBtn">&times;</button>
+        <video id="videoPlayer" controls>
+          <source id="videoSource" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <div class="nav">
+      <a href="/index.html">HOME</a>
+ 
+      <div class="nav-details">
+        <a href="#" onclick="toggleSection('details'); return false;">DETAILS</a>
+        <div class="details-buttons">
+          <a href="/pages/vlucht.html" target="_self">Informatie over de vlucht</a>
+          <a href="/pages/details.html" target="_self">Details over het ruimteschip</a>
+          <a href="/pages/menu.html" target="_self">Menu's van het onboard-restaurant</a>
+          <a href="/pages/fitness.html" target="_self">Wellness/Fitnessruimte</a>
+          <a href="/pages/VR.html" target="_self">VR-Ruimte</a>
+        </div>
+      </div>
+ 
+      <div class="nav-entertainment">
+        <a href="#" onclick="toggleSection('entertainment'); return false;">ENTERTAINMENT</a>
+        <div class="entertainment-buttons">
+          <a href="/pages/bibliotheek.html" target="_self">Overzicht van de Bibliotheek</a>
+          <a href="/pages/muziek.html" target="_self">Luisteren naar Muziek</a>
+          <a href="/pages/films.html" target="_self">Toegang tot Films en Series</a>
+          <a href="/pages/games.html" target="_self">Mini-Game</a>
+          <a href="/pages/webcam.html" target="_self">Webcamfeeds</a>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="/scripts/anime.js"> </script>
+    <script src="/scripts/nav.js"> </script>
+</body>
+</html>
