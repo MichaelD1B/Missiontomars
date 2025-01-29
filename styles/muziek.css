@@ -8,8 +8,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
+body
 
 .container {
   width: 100%;
@@ -62,10 +62,14 @@ body {
 }
 
 .grid {
+  position: fixed;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   padding: 100px 50px;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .grid img {
@@ -91,14 +95,14 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s, opacity 0.3s;
+  transition: visibility 0s, opacity 0.2s;
 }
 
 .video-overlay.active {
@@ -140,9 +144,9 @@ body {
 
 .close-btn {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 24px;
+  top: 40px;
+  right: 350px;
+  font-size: 58px;
   color: #fff;
   cursor: pointer;
   background: transparent;
