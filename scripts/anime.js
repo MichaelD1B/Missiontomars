@@ -5,8 +5,8 @@ const closeBtn = document.getElementById('closeBtn');
 
 // Mapping of image IDs to video file paths
 const videoMap = {
-  bluelock: '/videos/Rin vs Sae _ Blue Lock vs Japan U-20 Final Matchup!.mp4',
-  Kanye: '/videos/Graduation.mp4',
+  bluelock: '/videos/Rin vs Sae.mp4',
+  Kanye: '/videos/shinra vs sho.mp4',
   tobyfox: '/videos/Undertale OST_ 031 - Waterfall.mp4',
   LinkinPark: '/videos/LinkinPark.mp4',
   GreenDay: '/videos/GreenDay.mp4',
